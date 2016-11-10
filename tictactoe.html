@@ -1,0 +1,105 @@
+<html>
+<head>
+	<title> 3 en raya </title>
+	<script>
+		var tablerox = [0,0,0,0,0,0,0,0,0];
+		var jugador = 1;
+		function dibujar(){
+			for(i=0; i<9; i++){
+				if(tablerox[i] == 0) document.getElementById("c"+i).style="background-color:white"
+				if(tablerox[i] == 1) document.getElementById("c"+i).style="background-color:red"
+				if(tablerox[i] == 2) document.getElementById("c"+i).style="background-color:blue"
+			}
+		}
+		function pcelda(celda){
+			if(tablerox[celda]==0){
+				if(jugador == 1){
+					tablerox[celda]=1;
+					jugador = 2;
+				}else{
+					tablerox[celda] = 2;
+					jugador = 1;
+				}
+			}else{
+				window.alert("No puedes pulsar una celda coloreada");
+			}
+
+			dibujar();
+			switch(ganador()){
+				case 0:
+					break;
+				case 1:
+					window.alert("Gana el rojo");
+					break;
+				case 2:
+					window.alert("Gana el azul");
+					break;
+				case 3:
+					window.alert("Empate");
+					break;
+			}
+		}
+		
+		function ganador(){
+			if (tablerox[1] == 2 && tablerox[2] == 2 && tablerox[0] == 2) return 2;
+			if (tablerox[4] == 2 && tablerox[5] == 2 && tablerox[3] == 2) return 2;
+			if (tablerox[7] == 2 && tablerox[8] == 2 && tablerox[6] == 2) return 2;
+
+			// Arriba - Abajo
+			if (tablerox[0] == 2 && tablerox[3] == 2 && tablerox[6] == 2) return 2;
+			if (tablerox[1] == 2 && tablerox[4] == 2 && tablerox[7] == 2) return 2;
+			if (tablerox[2] == 2 && tablerox[5] == 2 && tablerox[8] == 2) return 2;
+
+			//Diagonales
+			if (tablerox[0] == 2 && tablerox[4] == 2 && tablerox[8] == 2) return 2;
+			if (tablerox[6] == 2 && tablerox[4] == 2 && tablerox[2] == 2) return 2;
+
+
+			if (tablerox[1] == 1 && tablerox[2] == 1 && tablerox[0] == 1) return 1;
+			if (tablerox[4] == 1 && tablerox[5] == 1 && tablerox[3] == 1) return 1;
+			if (tablerox[7] == 1 && tablerox[8] == 1 && tablerox[6] == 1) return 1;
+
+			// Arriba - Abajo
+			if (tablerox[0] == 1 && tablerox[3] == 1 && tablerox[6] == 1) return 1;
+			if (tablerox[1] == 1 && tablerox[4] == 1 && tablerox[7] == 1) return 1;
+			if (tablerox[2] == 1 && tablerox[5] == 1 && tablerox[8] == 1) return 1;
+
+			//Diagonales
+			if (tablerox[0] == 1 && tablerox[4] == 1 && tablerox[8] == 1) return 1;
+			if (tablerox[6] == 1 && tablerox[4] == 1 && tablerox[2] == 1) return 1;
+		
+			var numEspacios = 0;
+			for(i=0; i<9; i++){
+				if(tablerox[i]==0) numEspacios++;
+			}
+			if(numEspacios == 0) return 3;
+			return 0;
+			}
+				
+		
+		
+		
+	</script>
+</head>
+
+<body>
+	<p id="du"> TIC TAC TOE </p>
+	<table border="1">
+		<tr> 
+		<td width=100 height=100 id="c0" onclick="pcelda(0)"></td>
+		<td width=100 height=100 id="c1" onclick="pcelda(1)"></td>
+		<td width=100 height=100 id="c2" onclick="pcelda(2)"></td>
+		</tr>
+		<tr>
+		<td width=100 height=100 id="c3" onclick="pcelda(3)"></td>
+		<td width=100 height=100 id="c4" onclick="pcelda(4)"></td>
+		<td width=100 height=100 id="c5" onclick="pcelda(5)"></td>
+		</tr>
+		<tr>
+		<td width=100 height=100 id="c6" onclick="pcelda(6)"></td>
+		<td width=100 height=100 id="c7" onclick="pcelda(7)"></td>
+		<td width=100 height=100 id="c8" onclick="pcelda(8)"></td>
+		</tr>
+	<table>
+</body>
+</html>
