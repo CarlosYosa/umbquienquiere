@@ -9,12 +9,12 @@
 <html>
 <head>
 <meta charset="UTF-8">
-<title>Quienquiere</title>
+<title>quienquiere</title>
 <!-- write your code here -->
 
 
 <script src="https://code.createjs.com/createjs-2015.11.26.min.js"></script>
-<script src="Quienquiere.js?1478785948246"></script>
+<script src="quienquiere.js?1484335000771"></script>
 <script>
 var canvas, stage, exportRoot;
 function init() {
@@ -22,10 +22,12 @@ function init() {
 	
 	canvas = document.getElementById("canvas");
 	images = images||{};
+	ss = ss||{};
 
 	var loader = new createjs.LoadQueue(false);
 	loader.addEventListener("fileload", handleFileLoad);
 	loader.addEventListener("complete", handleComplete);
+	loader.loadFile({src:"images/quienquiere_atlas_.json?1484335000771", type:"spritesheet", id:"quienquiere_atlas_"}, true);
 	loader.loadManifest(lib.properties.manifest);
 }
 
@@ -34,11 +36,14 @@ function handleFileLoad(evt) {
 }
 
 function handleComplete(evt) {
-	exportRoot = new lib.Quienquiere();
+	var queue = evt.target;
+	ss["quienquiere_atlas_"] = queue.getResult("quienquiere_atlas_");
+	exportRoot = new lib.quienquiere();
 
 	stage = new createjs.Stage(canvas);
 	stage.addChild(exportRoot);
 	stage.update();
+	stage.enableMouseOver();
 
 	createjs.Ticker.setFPS(lib.properties.fps);
 	createjs.Ticker.addEventListener("tick", stage);
@@ -50,6 +55,6 @@ function handleComplete(evt) {
 
 </head>
 <body onload="init();" style="background-color:#D4D4D4;margin:0px;">
-	<canvas id="canvas" width="480" height="722" style="background-color:#0066FF"></canvas>
+	<canvas id="canvas" width="360" height="457" style="background-color:#0066FF"></canvas>
 </body>
 </html>
