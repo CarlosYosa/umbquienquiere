@@ -14,7 +14,7 @@
 
 
 <script src="https://code.createjs.com/createjs-2015.11.26.min.js"></script>
-<script src="quienquiere.js?1484335000771"></script>
+<script src="quienquiere.js"></script>
 <script>
 var canvas, stage, exportRoot;
 function init() {
@@ -27,7 +27,7 @@ function init() {
 	var loader = new createjs.LoadQueue(false);
 	loader.addEventListener("fileload", handleFileLoad);
 	loader.addEventListener("complete", handleComplete);
-	loader.loadFile({src:"images/quienquiere_atlas_.json?1484335000771", type:"spritesheet", id:"quienquiere_atlas_"}, true);
+	loader.loadFile({src:"images/quienquiere_atlas_.json", type:"spritesheet", id:"quienquiere_atlas_"}, true);
 	loader.loadManifest(lib.properties.manifest);
 }
 
