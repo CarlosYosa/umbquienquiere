@@ -1,14 +1,64 @@
 <!DOCTYPE HTML>
 
-<meta chaset="UTF-8">
-
 <html>
-	<head>
+	<head lang="es">
+	    <meta charset="UTF-8">
 		<title>EXAMEN TIPO ICFES</title>
-	
+						
+		<script type="text/javascript">
+			
+		function Calificacion(){
+		var sum,a,b,c,d,e,f,g,h;
+		sum = 0;
+		
+			if(document.pregunta1.preg1[2].checked){
+					a=1;
+			} else {a=0}
+			if(document.pregunta2.preg2[3].checked){
+					b=1;
+			} else {b=0}
+			if(document.pregunta3.preg3[2].checked){
+					c=1;
+			} else {c=0}
+			if(document.pregunta4.preg4[2].checked){
+					d=1;
+			} else {d=0}
+			if(document.pregunta5.preg5[0].checked){
+					e=1;
+			} else {e=0}
+			if(document.pregunta6.preg6[2].checked){
+					f=1;
+			} else {f=0}
+			if(document.pregunta7.preg7[1].checked){
+					g=1;
+			} else {g=0}
+			if(document.pregunta8.preg8[1].checked){
+					h=1;
+			} else {h=0}
+			
+		sum = a+b+c+d;	
+		
+		var notaa = (sum*5)/8;
+		var nota = notaa.toFixed(1);
+		alert("Su Calificación es " + nota)
+		
+		document.pregunta1.disabled = true;
+		document.pregunta2.disabled = true;
+		document.pregunta3.disabled = true;
+		document.pregunta4.disabled = true;
+		document.pregunta5.disabled = true;
+		document.pregunta6.disabled = true;
+		document.pregunta7.disabled = true;
+		document.pregunta8.disabled = true;
+		
+		}
+				
+		</script>
+		
 	</head>
 	
 	<body>
+	
 		<header>
 			<h1>LÓGICA MATEMÁTICA</h1>
 			<h1>CIENCIAS BÁSICAS</h1>
@@ -16,25 +66,109 @@
 			<hr/>
 			<br/>
 		</header>
-		<p><big/>PREGUNTA 1</p>
-		<p> Si, esta es la primera pregunta.<br/>Cuando la tenga se cambiara este texto</p>
-		<form>
-		<input type="radio" name="gender" value="false"/>la primera<br/>
-		<input type="radio" name="gender" value="true"/>la segunda<br/>
-		<input type="radio" name="gender" value="false"/>la tercera<br/>
-		<input type="radio" name="gender" value="false"/>la cuarta<br/> 
+				
+		<h4>PREGUNTA 1</h4>
+		<p> Si las proposiciones p y r son verdaderas y s es falsa,<br/> 
+		entonces la proposición compuesta s → ( r  ʌ p ) es: </p>
+		<form name="pregunta1">
+		<input type="radio" name="preg1" value="0"/>Verdadera<br/>
+		<input type="radio" name="preg1" value="0"/>Difícil concluir<br/>
+		<input type="radio" name="preg1" value="1"/>Falsa<br/>
+		<input type="radio" name="preg1" value="0"/>Tautología<br/> 
 		</form>
 		
-		<p><big/>PREGUNTA 2</p>
-		<p> Si, esta es la primera pregunta.<br/>Cuando la tenga se cambiara este texto</p>
-		<form>
-		<input type="radio" name="gender" value="false"/>la primera<br/>
-		<input type="radio" name="gender" value="false"/>la segunda<br/>
-		<input type="radio" name="gender" value="false"/>la tercera<br/>
-		<input type="radio" name="gender" value="true"/>la cuarta<br/>
+		<h4>PREGUNTA 2</h4>
+		<p> Un curso de lógica Matemática de 40 estudiantes se caracteriza <br/> 
+		por el deporte, 5 estudiantes practican futbol, voleibol y básquet.<br/>
+		21 juegan voleibol, 24 juegan futbol y 13 juegan básquet. Si del <br/>
+		curso hay 2 estudiantes que no practican ningún deporte, 12 que <br/>
+		juegan futbol y voleibol, 7 que juegan futbol y básquet y solo 8 <br/>
+		estudiantes se dedican exclusivamente al voleibol. El número de <br/>
+		jugadores que practican voleibol y básquet es:</p>
+		<form name="pregunta2">
+		<input type="radio" name="preg2" value="0"/>5<br/>
+		<input type="radio" name="preg2" value="0"/>l5<br/>
+		<input type="radio" name="preg2" value="0"/>23<br/>
+		<input type="radio" name="preg2" value="1"/>6<br/>
 		</form>
 		
-		<input type="submit" value="ENVIAR"/>
+		<h4>PREGUNTA 3</h4>
+		<p> Al simplificar la expresión 2/5+4/5-28/20 tenemos un numero <br/>
+		racional simplificado igual a </p>
+		<form name="pregunta3">
+		<input type="radio" name="preg3" value="0"/>(-2)/5<br/>
+		<input type="radio" name="preg3" value="0"/>4/5<br/>
+		<input type="radio" name="preg3" value="1"/>(-1)/5<br/>
+		<input type="radio" name="preg3" value="0"/>3/5<br/> 
+		</form>
+		
+		<h4>PREGUNTA 4</h4>
+		<p> Un estudiante solicita a sus padres un giro de 250 000 pesos<br/>
+		para invertir 1/3   en gasolina para la moto, 1/4 en papelería <br/>
+		de la universidad y el resto para onces con sus compañeros.<br/>
+		Según estos datos el estudiante invirtió en gasolina y onces <br/>
+		la suma de </p>
+		<form name="pregunta4">
+		<input type="radio" name="preg4" value="0"/>  104200<br/>
+		<input type="radio" name="preg4" value="0"/>  77500<br/>
+		<input type="radio" name="preg4" value="1"/>  187500<br/>
+		<input type="radio" name="preg4" value="0"/>  62500<br/>
+		</form>
+		
+		<h4>PREGUNTA 5</h4>
+		<p> Un curso de lógica Matemática de 40 estudiantes se caracteriza<br/>
+		por el deporte, 5 estudiantes practican futbol, voleibol y básquet.<br/>
+		21 juegan voleibol, 24 juegan futbol y 13 juegan básquet. Si del <br/>
+		curso hay 2 estudiantes que no practican ningún deporte, 12 que <br/>
+		juegan futbol y voleibol, 7 que juegan futbol y básquet y solo 8 <br/>
+		estudiantes se dedican exclusivamente al voleibol. El número de <br/>
+		estudiantes que practican solo dos deportes es: </p>
+		<form name="pregunta5">
+		<input type="radio" name="preg5" value="1"/>15<br/>
+		<input type="radio" name="preg5" value="0"/>12<br/>
+		<input type="radio" name="preg5" value="0"/>13<br/>
+		<input type="radio" name="preg5" value="0"/>14<br/> 
+		</form>
+		
+		<h4>PREGUNTA 6</h4>
+		<p>La proposición compuesta A ʌ( B v C ) corresponde a una</p>
+		<form name="pregunta6">
+		<input type="radio" name="preg6" value="0"/>Tautología <br/>
+		<input type="radio" name="preg6" value="0"/>Contradicción <br/>
+		<input type="radio" name="preg6" value="1"/>Contingencia <br/>
+		<input type="radio" name="preg6" value="0"/>Conjunción <br/>
+		</form>
+		
+		<h4>PREGUNTA 7</h4>
+		<p> El medicamento para liberar toxinas estomacales viene <br/>
+		en frascos de 420 mililitro. Si una cucharada contiene 15 ml<br/>
+		y le formularon tomar una cucharada cada 6 horas. El <br/>
+		medicamento le alcanzará para</p>
+		<form name="pregunta7">
+		<input type="radio" name="preg7" value="0"/>26 tomas<br/>
+		<input type="radio" name="preg7" value="1"/>7 días<br/>
+		<input type="radio" name="preg7" value="0"/>60 tomas<br/>
+		<input type="radio" name="preg7" value="0"/>15 días<br/> 
+		</form>
+		
+		<h4>PREGUNTA 8</h4>
+		<p> Un mago pide a tres personas del público pensar cada una en un número.<br/>
+		A partir de información que obtuvo sobre cada número, al preguntarle a las<br/>
+		personas, sabe que: Si el número de la primera persona es 0, entonces es <br/>
+		diferente al de la segunda persona; si la primera y la tercera persona <br/>
+		pensaron el mismo número, entonces los tres números son el mismo; el mago <br/>
+		logró deducir que la primera y la tercera persona pensaron el mismo número;<br/>
+		de lo anterior es correcto afirmar que:</p>
+		<form name="pregunta8">
+		<input type="radio" name="preg8" value="0"/>El número de la primera persona es 0<br/>
+		<input type="radio" name="preg8" value="1"/>Los tres pensaron en el mismo número<br/>
+		<input type="radio" name="preg8" value="0"/>La primera y la tercera persona no pensaron el mismo número<br/>
+		<input type="radio" name="preg8" value="0"/>El número de la segunda persona es 0<br/>
+		</form>
+		
+		<br/> 	<hr/> 	<br/>
+		<button type="submit" name="ENVIAR" onclick="Calificacion()">ENVIAR</button>
+		<br/>   <br/>
 		
 	</body>
 	
